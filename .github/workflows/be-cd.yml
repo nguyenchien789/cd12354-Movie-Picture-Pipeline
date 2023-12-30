@@ -33,7 +33,7 @@ jobs:
 
       - name: Install pipenv
         run: |
-          pip install pipenv
+          pip install pipenv && pip install flake8
 
       - name: Install dependencies
         run: |
