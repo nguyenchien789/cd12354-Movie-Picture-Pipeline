@@ -72,7 +72,7 @@ jobs:
 
   build:
     name: BE Build Job
-    needs: [lint-job, test-job]
+    needs: [lint, test]
     runs-on: ubuntu-latest 
 
     steps:
