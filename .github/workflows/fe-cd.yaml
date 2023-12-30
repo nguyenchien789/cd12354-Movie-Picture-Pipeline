@@ -89,7 +89,12 @@ jobs:
           docker build -t frontend --build-arg=REACT_APP_MOVIE_API_URL=${{ vars.REACT_APP_MOVIE_API_URL }} .
           docker tag frontend:latest 275244404389.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
           docker push 275244404389.dkr.ecr.us-east-1.amazonaws.com/frontend:latest
-      
+
+      - name: Run init
+        run: |
+          cd ./setup
+          ./init.sh || true
+
       - name: Update kubeconfig
         run: |
           aws eks update-kubeconfig --name cluster --region us-east-1
