@@ -1,4 +1,4 @@
-name: FECI
+name: Frontend Continuous Integration
 on:
   workflow_dispatch:
   pull_request:
